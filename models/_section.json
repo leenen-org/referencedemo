@@ -160,6 +160,7 @@
     {
       "id": "section",
       "components": [
+        "bento-grid",
 	      "button",
       	"cards",
       	"carousel",
