@@ -6786,5 +6786,74 @@
         "condition": { "==": [{ "var": "enableSubmitAction" }, true] }
       }
     ]
+  },
+  {
+    "id": "bento-grid",
+    "fields": []
+  },
+  {
+    "id": "bento-card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "width",
+        "label": "Card Width",
+        "valueType": "string",
+        "value": "medium",
+        "options": [
+          {
+            "name": "Small (1 column)",
+            "value": "small"
+          },
+          {
+            "name": "Medium (2 columns)",
+            "value": "medium"
+          },
+          {
+            "name": "Large (3 columns)",
+            "value": "large"
+          },
+          {
+            "name": "Full (all columns)",
+            "value": "full"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "ctastyle",
+        "label": "CTA Style",
+        "valueType": "string",
+        "value": "button",
+        "options": [
+          {
+            "name": "Primary Button",
+            "value": "button"
+          },
+          {
+            "name": "Secondary Button",
+            "value": "button-secondary"
+          },
+          {
+            "name": "Dark Button",
+            "value": "button-dark"
+          }
+        ]
+      }
+    ]
   }
 ]
