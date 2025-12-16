@@ -10,6 +10,7 @@
     "components": [
       "button",
       "action-button",
+      "bento-grid",
       "cards",
       "carousel",
       "columns",
@@ -39,6 +40,12 @@
     "id": "accordion",
     "components": [
       "accordion-item"
+    ]
+  },
+  {
+    "id": "bento-grid",
+    "components": [
+      "bento-card"
     ]
   },
   {

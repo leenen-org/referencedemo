@@ -8,6 +8,7 @@
    {
     "id": "section",
     "components": [
+      "bento-grid",
       "button",
       "cards",
       "carousel",
@@ -24,6 +25,12 @@
       "text",
       "title",
       "video"
+    ]
+  },
+  {
+    "id": "bento-grid",
+    "components": [
+      "bento-card"
     ]
   },
   {
