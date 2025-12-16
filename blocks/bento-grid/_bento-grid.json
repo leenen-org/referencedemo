@@ -16,6 +16,12 @@
       }
     }
   ],
+  "models": [
+    {
+      "id": "bento-grid",
+      "fields": []
+    }
+  ],
   "filters": [
     {
       "id": "bento-grid",
