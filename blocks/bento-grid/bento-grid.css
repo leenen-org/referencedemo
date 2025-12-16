@@ -1,0 +1,234 @@
+/* Bento Grid Block Styles */
+/* Container block that creates a flexible CSS Grid layout */
+
+.bento-grid {
+  margin: 0;
+  padding: 0;
+}
+
+/* Grid Container */
+.bento-grid .bento-grid-container {
+  display: grid;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+/* Default: 4 columns */
+.bento-grid .bento-grid-container,
+.bento-grid[data-grid-cols="4"] .bento-grid-container {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* 3 column variant */
+.bento-grid.cols-3 .bento-grid-container,
+.bento-grid[data-grid-cols="3"] .bento-grid-container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 6 column variant */
+.bento-grid.cols-6 .bento-grid-container,
+.bento-grid[data-grid-cols="6"] .bento-grid-container {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Grid Items (Cards) */
+.bento-grid .bento-grid-item {
+  background: var(--background-color) 0 0 no-repeat padding-box;
+  box-shadow: 0 3px 20px #00000010;
+  border: 1px solid var(--light-color);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 250px;
+}
+
+/* Card Width Spans - Default 4-column grid */
+.bento-grid[data-grid-cols="4"] .bento-grid-item[data-width="small"] {
+  grid-column: span 1;
+}
+
+.bento-grid[data-grid-cols="4"] .bento-grid-item[data-width="medium"] {
+  grid-column: span 2;
+}
+
+.bento-grid[data-grid-cols="4"] .bento-grid-item[data-width="large"] {
+  grid-column: span 3;
+}
+
+.bento-grid[data-grid-cols="4"] .bento-grid-item[data-width="full"] {
+  grid-column: span 4;
+}
+
+/* Card Width Spans - 3-column grid */
+.bento-grid[data-grid-cols="3"] .bento-grid-item[data-width="small"] {
+  grid-column: span 1;
+}
+
+.bento-grid[data-grid-cols="3"] .bento-grid-item[data-width="medium"] {
+  grid-column: span 2;
+}
+
+.bento-grid[data-grid-cols="3"] .bento-grid-item[data-width="large"],
+.bento-grid[data-grid-cols="3"] .bento-grid-item[data-width="full"] {
+  grid-column: span 3;
+}
+
+/* Card Width Spans - 6-column grid */
+.bento-grid[data-grid-cols="6"] .bento-grid-item[data-width="small"] {
+  grid-column: span 1;
+}
+
+.bento-grid[data-grid-cols="6"] .bento-grid-item[data-width="medium"] {
+  grid-column: span 2;
+}
+
+.bento-grid[data-grid-cols="6"] .bento-grid-item[data-width="large"] {
+  grid-column: span 3;
+}
+
+.bento-grid[data-grid-cols="6"] .bento-grid-item[data-width="full"] {
+  grid-column: span 6;
+}
+
+/* Card Image */
+.bento-grid .bento-grid-card-image {
+  line-height: 0;
+  background-color: transparent;
+  position: relative;
+  display: block;
+}
+
+.bento-grid .bento-grid-card-image picture {
+  width: 100%;
+  height: 100%;
+}
+
+.bento-grid .bento-grid-card-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  min-height: 200px;
+  transition: transform 0.4s ease;
+  transform-origin: 50% 50%;
+}
+
+.bento-grid .bento-grid-item:hover .bento-grid-card-image img {
+  transform: scale(1.05);
+}
+
+/* Card Body (Content) */
+.bento-grid .bento-grid-card-body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0;
+  flex: 1;
+}
+
+.bento-grid .bento-grid-card-body > *:first-child {
+  margin-top: 0;
+}
+
+.bento-grid .bento-grid-card-body h1,
+.bento-grid .bento-grid-card-body h2,
+.bento-grid .bento-grid-card-body h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+.bento-grid .bento-grid-card-body p {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.bento-grid .bento-grid-card-body ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.bento-grid .bento-grid-card-body li {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Button Container */
+.bento-grid .bento-grid-card-body p.button-container {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+/* Hide config cells */
+.bento-grid .bento-grid-config {
+  display: none;
+}
+
+/* Responsive Styles - Tablet */
+@media (width < 1024px) {
+  /* Switch to 2 columns on tablet */
+  .bento-grid .bento-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* All cards take appropriate spans in 2-column layout */
+  .bento-grid .bento-grid-item[data-width="small"],
+  .bento-grid .bento-grid-item[data-width="medium"] {
+    grid-column: span 1;
+  }
+
+  .bento-grid .bento-grid-item[data-width="large"],
+  .bento-grid .bento-grid-item[data-width="full"] {
+    grid-column: span 2;
+  }
+
+  .bento-grid .bento-grid-card-body h1,
+  .bento-grid .bento-grid-card-body h2,
+  .bento-grid .bento-grid-card-body h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .bento-grid .bento-grid-card-body p,
+  .bento-grid .bento-grid-card-body li {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .bento-grid .bento-grid-card-image img {
+    min-height: 150px;
+  }
+}
+
+/* Responsive Styles - Mobile */
+@media (width < 768px) {
+  /* Stack all cards vertically on mobile */
+  .bento-grid .bento-grid-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* All cards span full width */
+  .bento-grid .bento-grid-item {
+    grid-column: span 1;
+  }
+
+  .bento-grid .bento-grid-card-body {
+    padding: 15px;
+  }
+
+  .bento-grid .bento-grid-card-image img {
+    min-height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .bento-grid .bento-grid-item {
+    min-height: auto;
+  }
+}
+

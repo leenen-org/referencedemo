@@ -1,0 +1,124 @@
+/* Bento Card Block Styles */
+/* Note: Bento Card is designed to be used within Bento Grid container */
+/* The parent Bento Grid applies the grid layout and column spans */
+
+.bento-card .bento-card-item {
+  background: var(--background-color) 0 0 no-repeat padding-box;
+  box-shadow: 0 3px 20px #00000010;
+  border: 1px solid var(--light-color);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Card Image */
+.bento-card .bento-card-image {
+  line-height: 0;
+  background-color: transparent;
+  position: relative;
+  display: block;
+}
+
+.bento-card .bento-card-image picture {
+  width: 100%;
+  height: 100%;
+}
+
+.bento-card .bento-card-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  min-height: 200px;
+  transition: transform 0.4s ease;
+  transform-origin: 50% 50%;
+}
+
+.bento-card .bento-card-item:hover .bento-card-image img {
+  transform: scale(1.05);
+}
+
+/* Card Body (Content) */
+.bento-card .bento-card-body {
+  display: block;
+  background-color: var(--background-color);
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bento-card .bento-card-body > *:first-child {
+  margin-top: 0;
+}
+
+.bento-card .bento-card-body h1,
+.bento-card .bento-card-body h2,
+.bento-card .bento-card-body h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+.bento-card .bento-card-body p {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.bento-card .bento-card-body ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.bento-card .bento-card-body li {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Button Container */
+.bento-card .bento-card-body p.button-container {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+/* Hide config cells */
+.bento-card .bento-card-config {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (width < 1024px) {
+  .bento-card .bento-card-body h1,
+  .bento-card .bento-card-body h2,
+  .bento-card .bento-card-body h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .bento-card .bento-card-body p,
+  .bento-card .bento-card-body li {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .bento-card .bento-card-image img {
+    min-height: 150px;
+  }
+}
+
+@media (width < 768px) {
+  .bento-card .bento-card-body {
+    padding: 15px;
+  }
+
+  .bento-card .bento-card-image img {
+    min-height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
